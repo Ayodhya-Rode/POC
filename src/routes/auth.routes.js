@@ -1,0 +1,34 @@
+import { Router } from "express";
+import * as authController from "../controllers/auth.controllers.js"
+
+
+const authRouter = Router()
+
+
+/**
+ * POST - /api/auth/register
+ * to register a new user
+ */
+authRouter.post("/register", authController.register )
+
+/**
+ * GET  /api/auth/get-me
+ * to get specific existed user
+ */
+
+authRouter.get("/get-me", authController.getMe)
+
+/**
+ * GET  /api/auth/refresh-token
+ * to generate new access token using refresh token
+ */
+
+authRouter.get("/refresh-token",authController.refreshToken)
+
+/**
+ * GET  /api/auth/logout
+ */
+
+authRouter.get("/logout", authController.logout)
+
+export default authRouter
