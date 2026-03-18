@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(morgan("dev"))
 app.use(cookieParser())
 
-// api
+// api routes
 
 app.use("/api/auth",authRouter)
 
